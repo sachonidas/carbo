@@ -1,0 +1,30 @@
+carbo_homepage:
+    path:     /
+    defaults: { _controller: CarboBundle:Default:index }
+
+carbo_calc_index:
+    path:     /calc
+    defaults: { _controller: CarboBundle:Calcular:calculate }
+
+carbo_historial_index:
+    path:     /historial
+    defaults: { _controller: CarboBundle:Historial:index }
+
+carbo_historial_edit:
+    path:     /historial/edit-{id}
+    defaults: { _controller: CarboBundle:Historial:edit }
+
+carbo_estadistica_index:
+    path:     /estadistica
+    defaults: { _controller: CarboBundle:Estadistica:index }
+
+login:
+    path:     /login
+    defaults: { _controller: CarboBundle:User:login }
+
+login_check:
+    path:     /login_check
+
+logout:
+    path:     /logout
+

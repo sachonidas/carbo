@@ -1,0 +1,33 @@
+{% extends 'CarboBundle::layout.html.twig'  %}
+{% block js %}
+    <script type="text/javascript">
+        $(function() {
+            $('.datetimepicker3').datepicker({
+                pickDate: false
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="row">
+            {% for message in app.session.flashbag().get('status') %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+            <div class="col-lg-10">
+                <h2> Registra tus hidratos :</h2>
+                {{ form_start(form) }}
+                <label class="col-lg-6">Hidratos: </label>
+                {{ form_widget(form.hidratoCarbono)}}
+                <label class="col-lg-6">Horas de Entreno: </label>
+                {{ form_widget(form.horasEntreno) }}
+                <label class="col-lg-6">Peso: </label>
+                {{ form_widget(form.peso) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'CarboBundle::layout.html.twig'  %}
+
+{% block content %}
+    {% for message in app.session.flashbag().get('status') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    <div class="main">
+        <div class="row">
+            <div class="col-10">
+                <h2> Historial de tus hidratos :</h2>
+                {% for hidrato in hidratos %}
+                    {% if hidrato.user.name == app.user.name %}
+                        <div class="col-sm-6" style="margin: 10px">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hidratos : {{ hidrato.hidratoCarbono }} gr. &nbsp;&nbsp;&nbsp;&nbsp; {% if hidrato.ruta != null %}Nombre de la ruta: {{ hidrato.ruta }}{% endif %}</h5>
+                                    <p class="card-text">Horas de entreno : {{ hidrato.horasEntreno | date('H:i:s') }} Horas</p>
+                                    <p class="card-text">Peso del deportsita : {{ hidrato.peso }} Kg</p>
+                                    <a href="{{ path("carbo_historial_edit", {"id": hidrato.id }) }}" class="btn btn-primary"> <i class="far fa-edit"></i>Editar</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

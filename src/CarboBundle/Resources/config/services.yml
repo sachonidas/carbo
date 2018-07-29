@@ -1,0 +1,4 @@
+services:
+#    carbo.example:
+#        class: CarboBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
