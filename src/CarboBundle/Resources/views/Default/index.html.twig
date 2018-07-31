@@ -10,7 +10,11 @@
         <hr class="my-4">
         <p>Con lo que podras optimizar mejor tu rendimiento deportivo y ser más óptimo en tus salidas de ciclismo.</p>
         <p class="lead">
+        {% if app.user == null %}
             <a class="btn btn-primary btn-lg" href="{{ path('login') }}" role="button">Empieza ya!</a>
+        {% else %}
+            <a class="btn btn-primary btn-lg" href="{{ path('carbo_calc_index') }}" role="button">Empieza ya!</a>
+        {% endif %}
         </p>
     </div>
 {% endblock %}

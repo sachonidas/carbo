@@ -36,7 +36,7 @@ class EstadisticaController extends Controller
             "variables" => $numVariables,
             "mediaPeso" => $mediaPeso,
             "mediaHidratos" => $mediaHidratos,
-            "mediaHoras" => $mediaHoras,
+            "mediaHoras" => round($mediaHoras),
             "hidratos" => $hidratos
         ));
     }

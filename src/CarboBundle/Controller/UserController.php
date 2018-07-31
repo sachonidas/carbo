@@ -31,7 +31,7 @@ class UserController extends Controller
         if ($form->isSubmitted()){
             if ($form->isValid()){
                 $em = $this->getDoctrine()->getEntityManager();
-                $user_repo = $em->getRepository('BlogBundle:User');
+                $user_repo = $em->getRepository('CarboBundle:User');
                 $user = $user_repo->findOneBy(array("email" => $form->get("email")->getData()));
 
                 if (count($user) == 0){
@@ -67,6 +67,9 @@ class UserController extends Controller
             }
             //Mensaje flash para la sesion
             $this->session->getFlashBag()->add("status", $status);
+
+            //$this->redirect()
+            return $this->redirectToRoute("carbo_calc_index");
 
         }
 

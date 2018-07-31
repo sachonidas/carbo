@@ -10,6 +10,10 @@
         body{
             background-color: #458dda !important;
         }
+        .footerClass{
+            bottom: -350px;
+            color: #000;
+        }
         .sidenav {
             height: 100%;
             width: 180px;
@@ -74,7 +78,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
-                {#<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>#}
+                <button type="button" class="navbar-toggle collapsed fas fa-bars" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
                 <a class="navbar-brand" href="{{ path('carbo_homepage')}}">Registra tus hidratos </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -112,7 +116,9 @@
         {% endblock %}
     </section>
 </header>
-<footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fixed footerClass" >
+    <p class="pull-right">  <a href="https://crownsportnutrition.com/es/isodrink-energy/" style="color: black">Producto Recomendado</a></p>
+    <p class="pull-right">  <a href="https://crownsportnutrition.com/es/carbohidratos-y-rendimiento/" style="color: black">Estudios Relacionados</a></p>
     <hr>
 </footer>
 </body>

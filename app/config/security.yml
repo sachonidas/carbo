@@ -33,6 +33,7 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login_check
+                default_target_path: carbo_calc_index
             logout:
                 path:   /logout
                 target: /login

@@ -71,6 +71,11 @@
                 }
                 chart.render();
             }
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // you're in PORTRAIT mode
+                alert("Para una mejor vista, gire el dispositivo!");
+            }
+
 
         }    </script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -79,9 +84,9 @@
     {% for message in app.session.flashbag().get('status') %}
         <div class="alert alert-success">{{ message }}</div>
     {% endfor %}
-    <div class="main">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-xs-12">
                 <h2> Tus números :</h2>
                 <div class="card-deck">
                     <div class="col-md-3" style="margin: 10px">
@@ -89,16 +94,14 @@
                             <div class="card-body">
                                 <h5 class="card-title">Media de Hidratos</h5>
                                 <p class="card-text">Hidratos : {{ mediaHidratos |number_format(2, '.', ',')}} gr</p>
-                                <a href="#" class="btn btn-primary">Editar</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3" style="margin: 10px">
+                    <div class="col-md-4" style="margin: 10px">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Media de Horas de Entreno:</h5>
-                                <p class="card-text">Horas : {{ mediaHoras |number_format(2, '.', ',')}} horas</p>
-                                <a href="#" class="btn btn-primary">Editar</a>
+                                <h5 class="card-title">Media Horas de Entreno:</h5>
+                                <p class="card-text">Horas : {{ mediaHoras | date('H:i:s')}} horas</p>
                             </div>
                         </div>
                     </div>
@@ -107,13 +110,12 @@
                             <div class="card-body">
                                 <h5 class="card-title">Media de Peso</h5>
                                 <p class="card-text">Peso : {{ mediaPeso |number_format(2, '.', ',') }} kg</p>
-                                <a href="#" class="btn btn-primary">Editar</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="chartContainer" class="col-md-10" style="height: 300px; width: 100%;">
+            <div id="chartContainer" class="col-md-11" style="height: 300px; width: 100%;">
             </div>
         </div>
     </div>
